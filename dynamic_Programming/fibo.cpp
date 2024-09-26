@@ -12,6 +12,7 @@ typedef long long ll;
 
 ll dp[1000010];
 
+// Dynamic Programming use
 ll fibo(int n){
 
     if(n<=2) return 1;
@@ -21,6 +22,14 @@ ll fibo(int n){
     dp[n] = fibo(n-1)+fibo(n-2);
 
     return dp[n];
+}
+
+// Recursive implementation without DP
+ll f(int n){
+
+    if(n<=2) return 1;
+
+    return f(n-1)+f(n-2);
 }
 
 int main(){ _io

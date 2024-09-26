@@ -13,6 +13,7 @@ typedef long long ll;
 
 int n;
 
+// Conta o número de inversões
 int conta(vi& karts){
     if(karts.size()==1) return 0;
     vi a,b;
@@ -33,6 +34,7 @@ int conta(vi& karts){
     return cont;
 }
 
+// Só printa o vetor pra fins de análise e debug
 void printV(vi& v){
     int size=v.size();
     for(int i=0; i<size;i++){

@@ -19,12 +19,11 @@ int req_solve(int n){
     if(n==0) return 1;
     if(dp[n]!=-1) return dp[n];
 
-    int ans=0;
+    
     for(int d=1;d<=6;d++){
-        ans+=req_solve(n-d);
+        dp[n]+=req_solve(n-d);
     }
 
-    dp[n] = ans;
     return dp[n];
 }
 
