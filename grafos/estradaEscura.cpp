@@ -19,7 +19,6 @@ ll prim() {
     priority_queue<ii, vector<ii>, greater<ii>> pq;  
     ll mst_cost = 0;  
 
-    // Inserindo as arestas do nó inicial na fila de prioridade
     taken[0] = true;
     ii v;
     for (int j = 0; j < adj[0].size(); j++) {
@@ -55,7 +54,7 @@ int main() {
     
     while(cin >> m >> n && m!=0 && n!=0){
 
-        ll total_cost = 0;  // Custo total de todas as estradas
+        ll total_cost = 0;  
 
         for(int i=0;i<=n;i++){
             adj[i].clear();
@@ -65,11 +64,11 @@ int main() {
             int a, b, w; cin >> a >> b >> w;
             adj[a].pb({b, w});
             adj[b].pb({a, w});
-            total_cost += w;  // Somando o custo total
+            total_cost += w;  
         }
 
-        ll mst_cost = prim();  // Calcula o custo da MST
-        ll ans = total_cost - mst_cost;  // Calcula a economia
+        ll mst_cost = prim();  
+        ll ans = total_cost - mst_cost;  
         cout << ans << endl;
     }
 

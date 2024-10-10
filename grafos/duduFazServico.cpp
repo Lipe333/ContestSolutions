@@ -43,7 +43,7 @@ int main(){ _io
         
         int n,m; cin >> n >> m;
         
-        //Reinicia a lista de adjacencia e vetor de visitados para cada teste
+        
         for(int i=0;i<=n;i++){
             adj[i].clear();
             vis[i] = BRANCO;
