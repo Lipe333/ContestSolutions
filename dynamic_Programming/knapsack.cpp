@@ -61,13 +61,37 @@ int main(){ _io
 
 
     cout << "Valor minimo de elementos que eu posso pegar: " << ans << endl;
-    cout << "Elementos que eu peguei (Item, Peso) :\n";
-
-    for(int i = n-1; i >= 0; i--) {
-        if(pegados[i][c] == 1) {
-            cout << i << " (valor: " << vals[i] << ", peso: " << peso[i] << ")\n";
-            c -= peso[i];  // Atualiza a capacidade restante
-        }
+    cout << "Tabela de memoização (dp):\n\n";
+    cout << setw(6) << " ";
+    
+    // Cabeçalho com as capacidades (colunas)
+    for(int j = 0; j <= c; j++) {
+        cout << setw(6) << j;
     }
+    cout << endl;
+    
+    // Impressão das linhas da matriz dp
+    for(int i = 0; i < n; i++) {
+        cout << setw(6) << i; // índice do item
+        for(int j = 0; j <= c; j++) {
+            if(dp[i][j] == -1)
+                cout << setw(6) << "X"; // Se não foi calculado
+            else
+                cout << setw(6) << dp[i][j];
+        }
+        cout << endl;
+    }
+    
+
+    // cout << "Elementos que eu peguei (Item, Peso) :\n";
+
+    
+
+    // for(int i = n-1; i >= 0; i--) {
+    //     if(pegados[i][c] == 1) {
+    //         cout << i << " (valor: " << vals[i] << ", peso: " << peso[i] << ")\n";
+    //         c -= peso[i];  // Atualiza a capacidade restante
+    //     }
+    // }
 
 }

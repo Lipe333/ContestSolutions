@@ -22,7 +22,6 @@ int main() { _io
 
     int m; cin >> m;
 
-
     vector<string> sobrenomes(m);
     for (auto& sobrenome : sobrenomes) cin >> sobrenome;
 

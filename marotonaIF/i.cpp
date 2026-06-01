@@ -29,9 +29,9 @@ int main() { _io
 
     ll mquartos = -1, qatuais = 0, mdias = 0;
 
-    for (auto it = dias.begin(); it != dias.end(); it++){
-        int dia = it->first;
-        int mudou = it->second;
+    for (auto [a,b]:dias){
+        int dia = a;
+        int mudou = b;
 
         qatuais += mudou;
 

@@ -58,15 +58,12 @@ int main(){ _io
             }
         }
 
-        // Imprimir resultados
         cout << "Case #" << caso++ << ":\n";
         for (auto& componente : componentes) {
             for (char c : componente) cout << c << ",";
             cout << "\n";
         }
         cout << componentes.size() << " connected components\n";
-
-        // Sempre imprimir linha em branco após cada caso
         cout << "\n";
 
     }

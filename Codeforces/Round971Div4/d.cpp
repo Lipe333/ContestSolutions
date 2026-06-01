@@ -18,7 +18,7 @@ int main() {  _io
         int n; cin >> n;
         int count_y0 = 0, count_y1 = 0;
 
-        vector<int> y0, y1;
+        vi y0, y1;
 
         for (int i = 0; i < n; i++) {
             int x, y; cin >> x >> y;

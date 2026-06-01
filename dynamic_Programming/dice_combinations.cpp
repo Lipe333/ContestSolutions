@@ -22,7 +22,7 @@ ll solve(int n){
         for(int d:dice){
             if(i-d >= 0){
                 dp[i] += dp[i-d];
-                cout << "dp[" << i << "]=" << dp[i] << endl;
+                //cout << "dp[" << i << "]=" << dp[i] << endl;
                 dp[i] %= (1000000000+7);
             }
         }
@@ -36,12 +36,13 @@ ll req_solve(int n){
     if(n==0) return 1;
     if(dp[n]!=-1) return dp[n];
     
-    int res;
+    dp[n]=0;
+
     for(auto& d:dice){
         dp[n] += req_solve(d); 
     }
 
-    return res;
+    return dp[n];
 }
 
 int main(){ _io
