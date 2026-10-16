@@ -29,7 +29,7 @@ struct Node {
 struct SegTree {
     int n;
     vector<Node> t;
-    vll lz;
+    vll lazy;
 
     Node merge(const Node& a, const Node& b) {
         return {a.sum + b.sum};
@@ -38,15 +38,15 @@ struct SegTree {
     // soma v em todo o segmento [lx, rx)
     void apply(int x, int lx, int rx, ll v) {
         t[x].sum += v * (rx - lx);
-        lz[x] += v;
+        lazy[x] += v;
     }
 
     void push(int x, int lx, int rx) {
-        if (lz[x]) {
+        if (lazy[x]) {
             int m = (lx + rx) / 2;
-            apply(2 * x + 1, lx, m, lz[x]);
-            apply(2 * x + 2, m, rx, lz[x]);
-            lz[x] = 0;
+            apply(2 * x + 1, lx, m, lazy[x]);
+            apply(2 * x + 2, m, rx, lazy[x]);
+            lazy[x] = 0;
         }
     }
 
@@ -64,7 +64,7 @@ struct SegTree {
     void init(const vll& a) {
         n = a.size();
         t.assign(4 * n, {0});
-        lz.assign(4 * n, 0);
+        lazy.assign(4 * n, 0);
         build(a, 0, 0, n);
     }
 
